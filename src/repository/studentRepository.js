@@ -17,7 +17,7 @@ export function updateStudent(id, data) {
 }
 
 export function updateStudentScores(id, exam, score) {
-    return Student.findByIdAndUpdate(id, {[`scores.${exam}`]: score});
+    return Student.findByIdAndUpdate(id, {[`scores.${exam}`]: score}, {new: true});
 }
 
 export function findStudentByName(name) {
